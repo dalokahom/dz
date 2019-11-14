@@ -43,6 +43,7 @@ class AddContactVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Не забывай отделять фигурные скобки пробелом
         if indexPath.row == 0{
             let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
             let camera = UIAlertAction(title: "Камера", style: .default) { _ in
@@ -57,7 +58,7 @@ class AddContactVC: UITableViewController {
             actionSheet.addAction(photo)
             actionSheet.addAction(cancel)
             present(actionSheet, animated: true)
-        }else{
+        }else{ // И тут тоже пробелов не хватает
             view.endEditing(true)
         }
     }
@@ -70,6 +71,7 @@ class AddContactVC: UITableViewController {
 
 extension AddContactVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
 
+    // Пробелы
     func chooseImage(source: UIImagePickerController.SourceType){
         if UIImagePickerController.isSourceTypeAvailable(source){
             let imagePiker = UIImagePickerController()
